@@ -9,17 +9,6 @@ import SwiftUI
 
 struct CalculatorView: View 
 {
-    
-    let buttons: [[CalcButton]] =
-    [
-        [.clear, .negative, .percent, .divide],
-        [.seven, .eight, .nine, .multiply],
-        [.four, .five, .six, .add],
-        [.one, .two, .three, .subtract],
-        [.zero, .decimal, .equal],
-    ]
-    
-    
     var body: some View
     {
         ZStack
@@ -28,7 +17,10 @@ struct CalculatorView: View
                 .edgesIgnoringSafeArea(.all)
             VStack
             {
-                ForEach(buttons, id: \.self)
+                Text(displayValue)
+                    .foregroundColor(.white)
+                //Hope to remove this with the buttonstyles swift file. 
+                ForEach(viewButtons, id: \.self)
                 {
                     row in
                     //This will iterate over the buttons, and assign them to row i think.

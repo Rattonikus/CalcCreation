@@ -12,3 +12,5 @@ func buttonPressed(button: CalcButton)
 {
   
 }
+
+var displayValue = "0"

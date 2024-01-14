@@ -25,7 +25,7 @@ enum CalcButton: String
     case divide = "÷"
     case multiply = "×"
     case equal = "="
-    case clear = "AC"
+    case clear = "C"
     case decimal = "."
     case percent = "%"
     case negative = "-/+"
@@ -59,3 +59,12 @@ enum CalcButton: String
         }
     }
 }
+
+let viewButtons: [[CalcButton]] =
+[
+    [.clear, .negative, .percent, .divide],
+    [.seven, .eight, .nine, .multiply],
+    [.four, .five, .six, .add],
+    [.one, .two, .three, .subtract],
+    [.zero, .decimal, .equal],
+]
