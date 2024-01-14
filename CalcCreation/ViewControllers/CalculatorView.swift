@@ -19,6 +19,7 @@ struct CalculatorView: View
         [.zero, .decimal, .equal],
     ]
     
+    @State var deleteMe = false
     
     var body: some View
     {
@@ -38,7 +39,7 @@ struct CalculatorView: View
                         {
                             item in
                             
-                            Button(action: <#T##() -> Void#>, label: <#T##() -> Label#>)
+                            Button(action: {placeholderButton()}, label: {Text("0")})
                             
                         }
                     }
@@ -48,12 +49,20 @@ struct CalculatorView: View
         .padding()
         }
     }
+    func placeholderButton() -> Void
+    {
+        if deleteMe == true
+        {
+            deleteMe = false
+        }
+        else
+        {
+            deleteMe = true
+        }
+    }
 }
 
-func placeholderButton() -> Void
-{
-    //Do nothing! 
-}
+
 
 #Preview 
 {
